@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فمیلی کارت | Family Card</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:tahoma,Arial;
+background:
+radial-gradient(circle at top,#1d4ed8,#020617 55%);
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+
+/* نورهای متحرک */
+
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:400px;
+height:400px;
+border-radius:50%;
+filter:blur(120px);
+z-index:-1;
+}
+
+body::before{
+background:#38bdf8;
+top:-150px;
+right:-150px;
+animation:light1 8s infinite alternate;
+}
+
+body::after{
+background:#a855f7;
+bottom:-150px;
+left:-150px;
+animation:light2 10s infinite alternate;
+}
+
+@keyframes light1{
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(-200px,250px);
+}
+}
+
+@keyframes light2{
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(200px,-200px);
+}
+}
+
+
+
+/* هدر */
+
+header{
+
+background:rgba(2,6,23,.75);
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid #334155;
+
+padding:20px;
+
+position:sticky;
+top:0;
+z-index:10;
+
+}
+
+
+.nav{
+
+max-width:1100px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+.logo{
+
+font-size:32px;
+font-weight:900;
+
+background:
+linear-gradient(90deg,#facc15,#38bdf8);
+
+-webkit-background-clip:text;
+color:transparent;
+
+text-shadow:0 0 20px #38bdf8;
+
+}
+
+
+
+.nav button{
+
+background:#2563eb;
+color:white;
+
+border:0;
+
+padding:12px 20px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+box-shadow:
+0 0 20px #2563eb;
+
+}
+
+
+/* معرفی */
+
+.hero{
+
+max-width:1100px;
+margin:auto;
+
+text-align:center;
+
+padding:60px 20px;
+
+animation:show 1s;
+
+}
+
+
+.hero h1{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+}
+
+
+.hero h1 span{
+
+color:#facc15;
+
+text-shadow:
+0 0 20px gold;
+
+}
+
+
+.hero p{
+
+color:#cbd5e1;
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+
+
+@keyframes show{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+
+/* بخش کارت ها */
+
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:20px;
+
+}
+
+
+
+.title{
+
+text-align:center;
+margin:30px;
+
+}
+
+
+.title h2{
+
+font-size:35px;
+
+color:#38bdf8;
+
+text-shadow:
+0 0 15px #38bdf8;
+
+}
+
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.product{
+
+background:
+rgba(15,23,42,.8);
+
+border:1px solid #334155;
+
+border-radius:25px;
+
+overflow:hidden;
+
+transition:.5s;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.4);
+
+}
+
+
+
+.product:hover{
+
+transform:
+translateY(-12px)
+scale(1.03);
+
+box-shadow:
+0 0 35px #38bdf8;
+
+}
+
+
+
+.card-view{
+
+height:300px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+/* کارت های نمونه */
+
+
+.card{
+
+width:160px;
+height:230px;
+
+border-radius:20px;
+
+padding:15px;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 20px 40px black;
+
+animation:float 3s infinite alternate;
+
+}
+
+
+
+@keyframes float{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-10px);
+}
+
+}
+
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transform:translateX(-100%);
+
+animation:shine 3s infinite;
+
+}
+
+
+
+@keyframes shine{
+
+to{
+
+transform:translateX(100%);
+
+}
+
+}
+
+
+
+.gold{
+
+background:
+linear-gradient(135deg,#facc15,#92400e);
+
+}
+
+
+.icon{
+
+background:
+linear-gradient(135deg,#e5e7eb,#64748b);
+
+color:#111;
+
+}
+
+
+.toty{
+
+background:
+linear-gradient(135deg,#38bdf8,#1e3a8a);
+
+}
+
+
+
+.rating{
+
+font-size:35px;
+font-weight:bold;
+
+}
+
+
+.position{
+
+font-size:14px;
+
+}
+
+
+
+.face{
+
+height:100px;
+width:100px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.25);
+
+margin:15px auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:35px;
+
+}
+
+
+
+.card h3{
+
+text-align:center;
+
+}
+
+
+
+.info{
+
+padding:20px;
+
+}
+
+
+
+.info h3{
+
+margin-bottom:10px;
+
+}
+
+
+.price{
+
+color:#facc15;
+
+margin-bottom:15px;
+
+}
+
+
+.buy{
+
+width:100%;
+
+padding:12px;
+
+border:0;
+
+border-radius:15px;
+
+background:
+linear-gradient(90deg,#2563eb,#7c3aed);
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+.buy:hover{
+
+box-shadow:
+0 0 25px #7c3aed;
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+⚡ فمیلی کارت
+</div>
+
+<button>
+اسطوره تویی
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+ساخت <span>کارت افسی</span> اختصاصی
+</h1>
+
+<p>
+کارت فوتبالی خودت را بساز و تبدیل به یک اسطوره شو!
+</p>
+
+</section>
+
+
+
+<div class="container">
+
+
+<div class="title">
+
+<h2>
+🃏 مدل های FC 26
+</h2>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="product">
+
+<div class="card-view">
+
+<div class="card gold">
+
+<div class="rating">95</div>
+
+<div class="position">
+ST
+</div>
+
+<div class="face">
+⚽
+</div>
+
+<h3>
+GOLD
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<h3>
+Gold Card
+</h3>
+
+<div class="price">
+FC26 Edition
+</div>
+
+<button class="buy">
+انتخاب
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="product">
+
+<div class="card-view">
+
+<div class="card icon">
+
+<div class="rating">97</div>
+
+<div class="position">
+CAM
+</div>
+
+<div class="face">
+⭐
+</div>
+
+<h3>
+ICON
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<h3>
+Icon Card
+</h3>
+
+<div class="price">
+Legend Edition
+</div>
+
+<button class="buy">
+انتخاب
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="product">
+
+<div class="card-view">
+
+<div class="card toty">
+
+<div class="rating">99</div>
+
+<div class="position">
+RW
+</div>
+
+<div class="face">
+🏆
+</div>
+
+<h3>
+TOTY
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<h3>
+TOTY Card
+</h3>
+
+<div class="price">
+Ultimate Edition
+</div>
+
+<button class="buy">
+انتخاب
+</button>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+<!-- بخش اسطوره تویی -->
+
+<div class="container" id="heroCard">
+
+<div class="title">
+<h2>🔥 اسطوره تویی</h2>
+<p>کارت اختصاصی FC26 خودت را سفارش بده</p>
+</div>
+
+
+<div class="form-box">
+
+<input id="playerName" placeholder="نام روی کارت">
+
+<label>🖼️ تصویر بازیکن</label>
+<input id="playerImg" type="file" accept="image/*">
+
+<label>🌍 تصویر کشور</label>
+<input id="countryImg" type="file" accept="image/*">
+
+
+<input id="country" placeholder="کشور">
+
+<input id="team" placeholder="تیم">
+
+<input id="league" placeholder="لیگ">
+
+<input id="power" type="number" placeholder="قدرت کارت">
+
+
+<h3>🃏 انتخاب مدل FC26</h3>
+
+<div class="models">
+
+<div class="model active">Gold</div>
+<div class="model">ICON</div>
+<div class="model">TOTY</div>
+<div class="model">TOTS</div>
+<div class="model">HERO</div>
+<div class="model">UCL</div>
+<div class="model">Fantasy</div>
+<div class="model">Future</div>
+
+</div>
+
+
+<h3>✨ انتخاب پس زمینه</h3>
+
+<div class="backgrounds">
+
+<div class="background bg1 active"></div>
+<div class="background bg2"></div>
+<div class="background bg3"></div>
+<div class="background bg4"></div>
+
+</div>
+
+
+<button onclick="sendOrder()" class="order">
+🚀 ثبت سفارش
+</button>
+
+
+
+<div id="done">
+
+<h2>✅ سفارش آماده شد</h2>
+
+<p>
+برای تکمیل سفارش روی دکمه زیر بزنید:
+</p>
+
+<a href="https://ble.ir/faribaqe" target="_blank">
+💬 رفتن به بله و پیام به @faribaqe
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<style>
+
+.form-box{
+
+background:rgba(15,23,42,.85);
+
+padding:25px;
+
+border-radius:25px;
+
+border:1px solid #334155;
+
+box-shadow:
+0 0 40px rgba(56,189,248,.25);
+
+animation:show 1s;
+
+}
+
+
+.form-box input{
+
+width:100%;
+
+padding:14px;
+
+margin:8px 0;
+
+background:#020617;
+
+border:1px solid #475569;
+
+border-radius:15px;
+
+color:white;
+
+font-size:16px;
+
+}
+
+
+.form-box label{
+
+display:block;
+
+margin-top:15px;
+
+color:#94a3b8;
+
+}
+
+
+
+.models{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:10px;
+
+margin:15px 0;
+
+}
+
+
+
+.model{
+
+background:#1e293b;
+
+padding:15px;
+
+text-align:center;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.model:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 20px #38bdf8;
+
+}
+
+
+
+.model.active{
+
+background:
+linear-gradient(45deg,#facc15,#ea580c);
+
+color:black;
+
+box-shadow:
+0 0 25px gold;
+
+}
+
+
+
+
+.backgrounds{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:10px;
+
+margin:15px 0;
+
+}
+
+
+.background{
+
+height:70px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.background:hover{
+
+transform:scale(1.1);
+
+}
+
+
+.background.active{
+
+border:4px solid white;
+
+box-shadow:
+0 0 25px white;
+
+}
+
+
+
+.bg1{
+
+background:
+linear-gradient(135deg,#facc15,#78350f);
+
+}
+
+
+.bg2{
+
+background:
+linear-gradient(135deg,#38bdf8,#172554);
+
+}
+
+
+
+.bg3{
+
+background:
+linear-gradient(135deg,#c084fc,#4c1d95);
+
+}
+
+
+
+.bg4{
+
+background:
+linear-gradient(135deg,#22c55e,#064e3b);
+
+}
+
+
+
+
+.order{
+
+width:100%;
+
+padding:16px;
+
+border:0;
+
+border-radius:15px;
+
+background:
+linear-gradient(90deg,#2563eb,#9333ea);
+
+color:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 0 25px #2563eb;
+
+}
+
+
+
+#done{
+
+display:none;
+
+margin-top:25px;
+
+text-align:center;
+
+animation:show 1s;
+
+}
+
+
+
+#done a{
+
+display:block;
+
+background:#22c55e;
+
+color:white;
+
+padding:16px;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+box-shadow:
+0 0 25px #22c55e;
+
+}
+
+
+
+@media(max-width:600px){
+
+.models{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.backgrounds{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+</style>
+
+
+
+
+<script>
+
+
+// انتخاب مدل کارت
+
+document.querySelectorAll(".model").forEach(card=>{
+
+card.onclick=function(){
+
+document.querySelectorAll(".model")
+.forEach(x=>x.classList.remove("active"));
+
+this.classList.add("active");
+
+}
+
+});
+
+
+
+// انتخاب پس زمینه
+
+document.querySelectorAll(".background").forEach(bg=>{
+
+bg.onclick=function(){
+
+document.querySelectorAll(".background")
+.forEach(x=>x.classList.remove("active"));
+
+this.classList.add("active");
+
+}
+
+});
+
+
+
+
+// ثبت سفارش
+
+function sendOrder(){
+
+document.getElementById("done")
+.style.display="block";
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+</script>
